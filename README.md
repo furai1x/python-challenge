@@ -1,2 +1,2 @@
 # python-challenge
-Pybank and Pyroll python challenges - Homework 3
+PyBank and PyPoll python challenges - Homework 3
