@@ -40,6 +40,8 @@ max_change_date = df_budget_data.loc[df_budget_data["Change"]==max_change, "Date
 min_change = df_budget_data["Change"].tail(total_months-1).min()
 min_change_date = df_budget_data.loc[df_budget_data["Change"]==min_change, "Date"].item()
 
+# Print output
+
 print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months:  {total_months}")
@@ -49,9 +51,7 @@ print(f"Greatest Increase in Profits: {max_change_date} $({max_change})")
 print(f"Greatest Decrease in Profits: {min_change_date} $({min_change})")
 
 
-
-
-
+#  Take output and put it into a data frame
 
 summary_table = pd.DataFrame({"Total Months":  total_months, 
                               "Total $": [total_prof_loss], 
@@ -60,6 +60,8 @@ summary_table = pd.DataFrame({"Total Months":  total_months,
                               "Greatest Increase in Profits": [max_change], 
                               "Greatest Decrease in Profits Month": [min_change_date],
                               "Greatest Decrease in Profits":  [min_change]})
+
+#  Export output to csv file
 
 csv_path = "Resources/budget_summary.csv"
 
