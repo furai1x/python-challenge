@@ -32,15 +32,18 @@ percent_votes = summary_table["Number of Votes"]/total_votes*100
 summary_table["Percent of Votes"] = percent_votes
 summary_table["Percent of Votes"] = summary_table["Percent of Votes"].round(3)
 
+vote_summary_table = summary_table.reset_index(drop=True)
+
 # Export Results to file
 
-csv_path = "Resources/election_summary.csv"
+csv_path = "Output/election_summary.csv"
 
-summary_table.to_csv(csv_path, encoding="utf-8")
+vote_summary_table.to_csv(csv_path, encoding="utf-8",index=False)
 
-#
 
-summary_output = summary_table["Candidate"] + ":  " + summary_table["Percent of Votes"].map(str) + "00%  (" + summary_table["Number of Votes"].map(str) + ")" 
+#  
+
+summary_output = vote_summary_table["Candidate"] + ":  " + vote_summary_table["Percent of Votes"].map(str) + "00%  (" + vote_summary_table["Number of Votes"].map(str) + ")" 
    
 # Print output
 

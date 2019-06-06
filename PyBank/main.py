@@ -63,6 +63,6 @@ summary_table = pd.DataFrame({"Total Months":  total_months,
 
 #  Export output to csv file
 
-csv_path = "Resources/budget_summary.csv"
+csv_path = "Output/budget_summary.csv"
 
 summary_table.to_csv(csv_path, encoding="utf-8")
